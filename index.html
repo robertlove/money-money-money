@@ -3,25 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
     <title>Money, Money, Money</title>
   </head>
   <body>
-    <div class="container">
-
-      <h1 class="display-1 my-5 text-center">Money, Money, Money</h1>
-
-      <div class="row justify-content-center my-5">
-        <div class="col-lg-6">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ETxmCCsMoD0?rel=0&amp;controls=0&amp;showinfo=0"></iframe>
-          </div>
-        </div>
+    <div class="jumbotron jumbotron-fluid text-center">
+      <div class="container">
+        <h1 class="display-4">Money, Money, Money</h1>
+        <p class="lead">Would you rather $1,000,000 now or 1c which doubles every day for one month?</p>
       </div>
-
+    </div>
+    <div class="container-fluid">
       <div class="row my-5">
-        <div class="col-lg-4">
-          <h2 class="display-4 text-center">Year</h2>
+        <div class="col-lg-6">
+          <h2 class="display-4 text-center">$1,000,000</h2>
           <table class="table">
             <thead>
               <tr>
@@ -41,20 +36,8 @@
             </tbody>
           </table>
         </div>
-        <div class="col-lg-4">
-          <h2 class="display-4 text-center">Months</h2>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Month</th>
-                <th class="text-right">Amount</th>
-              </tr>
-            </thead>
-            <tbody id="months"></tbody>
-          </table>
-        </div>
-        <div class="col-lg-4">
-          <h2 class="display-4 text-center">Days</h2>
+        <div class="col-lg-6">
+          <h2 class="display-4 text-center">1c</h2>
           <table class="table">
             <thead>
               <tr>
@@ -67,34 +50,19 @@
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script>
-
-    var running = 200;
-    var total = 0;
-    var html = '';
-    for (var i = 1; i <= 12; i++) {
-      console.log(i + ' : ' + running);
-      html += '<tr><th>' + i + '</th><td class="text-right">' + running + '</td></tr>';
-      running = running * 2;
-      total += running;
-    }
-    console.log('TOTAL:' + total);
-    html += '<tr><th>TOTAL:</th><th class="text-right">$' + total.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + '</th></tr>';
-    $('#months').html(html);
 
     var running = 0.01;
     var total = 0;
     var html = '';
-    for (var i = 1; i <= 365; i++) {
-      console.log(i + ' : ' + running);
+    for (var i = 1; i <= 31; i++) {
       html += '<tr><th>' + i + '</th><td class="text-right">' + running + '</td></tr>';
       running = running * 2;
       total += running;
     }
-    console.log('TOTAL:' + total);
     html += '<tr><th>TOTAL:</th><th class="text-right">$' + total.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + '</th></tr>';
     $('#days').html(html);
 
