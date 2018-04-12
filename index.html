@@ -9,7 +9,7 @@
   <body>
     <div class="jumbotron jumbotron-fluid text-center">
       <div class="container">
-        <h1 class="display-4">Money, Money, Money</h1>
+        <h1 class="display-3">Money, Money, Money</h1>
         <p class="lead">Would you rather $1,000,000 now or 1c which doubles every day for one month?</p>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <div class="row my-5">
         <div class="col-lg-6">
           <h2 class="display-4 text-center">$1,000,000</h2>
-          <table class="table">
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th>Year</th>
@@ -27,7 +27,7 @@
             <tbody>
               <tr>
                 <th>1</th>
-                <td class="text-right">1000000</td>
+                <td class="text-right text-monospace">1000000</td>
               </tr>
               <tr>
                 <th>TOTAL:</th>
@@ -38,7 +38,7 @@
         </div>
         <div class="col-lg-6">
           <h2 class="display-4 text-center">1c</h2>
-          <table class="table">
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th>Day</th>
@@ -54,18 +54,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <script>
-
     var running = 0.01;
     var total = 0;
     var html = '';
     for (var i = 1; i <= 31; i++) {
-      html += '<tr><th>' + i + '</th><td class="text-right">' + running + '</td></tr>';
+      html += '<tr><th>' + i + '</th><td class="text-right text-monospace">' + running + '</td></tr>';
       running = running * 2;
       total += running;
     }
     html += '<tr><th>TOTAL:</th><th class="text-right">$' + total.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + '</th></tr>';
     $('#days').html(html);
-
     </script>
   </body>
 </html>
