@@ -59,8 +59,8 @@
     var html = '';
     for (var i = 1; i <= 31; i++) {
       html += '<tr><th>' + i + '</th><td class="text-right text-monospace">' + running + '</td></tr>';
-      running = running * 2;
       total += running;
+      running = running * 2;
     }
     html += '<tr><th>TOTAL:</th><th class="text-right">$' + total.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,') + '</th></tr>';
     $('#days').html(html);
